@@ -17,6 +17,10 @@ from django.contrib.postgres.search import SearchVector,\
     paginate_by = 3
     template_name = 'blog/post/list.html'"""
 
+def index(request):
+    posts = Post.published.all()
+    recents = posts.order_by('-publish')[:3]
+    return render(request, 'index.html', {'posts': recents}) 
 
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
