@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+{% block title %} Blog | Yeku Wilfred C.{% endblock %}
+{% block content %}
+<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('http://placehold.it/1920x1100');">
+    <div class="container-fluid padding-five-lr">
+        <div class="row">                  
+            <div class="col-lg-5 col-md-5 col-sm-12 pull-right">
+                <div class="padding-ten-all sm-padding-70px-all xs-padding-25px-all bg-white box-shadow-light">
+                    <i class="fa fa-quote-left text-deep-pink icon-large margin-15px-bottom"></i>
+                    <h5 class="text-extra-dark-gray margin-50px-bottom sm-margin-20px-bottom alt-font">
+                        Hello, I am a Full-Stack Developer from Douala, Cameroon.
+                        I hold a Bachelor's Degree of Software Engineering from University Institute of Technology Douala.
+                    </h5>
+                    <ul class="text-medium list-style-3">
+                        <li><span class="width-30 display-inline-block">Name:</span>Yeku Wilfred Chetat</li>
+                        <li><span class="width-30 display-inline-block">Github:</span><a href="https://github.com/chetat" target="_blank">@Chetat</a></li>
+                        <li><span class="width-30 display-inline-block">LinkedIn:</span><a href="https://linkedin.com/yeku-wilfred-chetat" target="_blank">Yeku Wilfred Chetat</a></li>
+                        <li>
+                            <span class="width-30 display-inline-block">Upwork:</span> <a href="https://www.upwork.com/o/profiles/users/~011884062ea2574991/" target="_blank">Yeku W.</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeIn">
+                <div class="position-relative icon-with-paragraph">
+                    <span class="text-deep-pink position-absolute left-0 top-0 alt-font special-char-extra-large sm-display-none">*</span> 
+                    <h6 class="font-weight-300 text-extra-dark-gray width-90 padding-nineteen-left md-padding-twenty-left md-width-100 sm-no-padding-left xs-margin-five-bottom">
+                        You have in mind to build an outstanding, robust, organized, and well-structured Web application and/or APIs that will increase your business value? Look further no more, I am here to help you create value for your business and organization.</h6>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-5 col-md-offset-1 col-lg-offset-0 col-sm-6 col-xs-12 wow fadeIn last-paragraph-no-margin" data-wow-delay="0.2s">
+                <p class="text-medium font-weight-300 width-70 line-height-26 md-width-100">
+                    Passionate and self-motivated full-stack developer with a mindset of customer satisfaction and getting things done with minimum delay. 
+I have 3 years of experience building web applications and APIs using Flask. I have a broad knowledge of the following technologies: 
+Cloud services for deployment: Heroku / AWS
+Server deployment and containerization tools: Kubernetes / Docker.
+Database ORM and ODM: SQLAlchemy, MongoEngine
+M
+                    </p>
+                <a href="#expertise" class="inner-link text-uppercase alt-font margin-15px-top display-inline-block font-weight-600 text-deep-pink text-extra-small">Check My Expertise <i class="fas fa-long-arrow-alt-right margin-5px-left text-medium position-relative top-2" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+ <!-- start blog section -->
+ <section id="blog" class="bg-light-gray wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center margin-100px-bottom sm-margin-70px-bottom xs-margin-50px-bottom">
+                <h5 class="text-uppercase alt-font text-extra-dark-gray margin-20px-bottom font-weight-700 sm-width-100 xs-width-100">Recent Blog Posts</h5>
+                <span class="separator-line-horrizontal-medium-light2 bg-deep-pink display-table margin-auto width-100px"></span>
+            </div> 
+        </div>
+        <div class="row equalize xs-equalize-auto">
+            <!-- start blog post item -->
+           {% for post in posts %}
+                <div class="col-md-4 col-sm-4 col-xs-12 xs-margin-ten-bottom wow fadeInUp blog-post-style5 last-paragraph-no-margin">
+                    <div class="blog-post bg-white">
+                        <div class="blog-post-images overflow-hidden">
+                            <a href="javascript:void(0);">
+                                <img src="http://placehold.it/900x650" alt="">
+                            </a>
+                            <div class="blog-categories bg-white text-uppercase text-extra-small alt-font"><a href="{{ post.get_absolute_url }}"> 
+                                {% for tag in post.tags.all %}
+                               
+                                    {{ tag.name }}
+                                
+                                {% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                            
+                            </a></div>
+                        </div>
+                        <div class="post-details inner-match-height padding-ten-all xs-padding-five-lr">
+                            <div class="blog-hover-color"></div>
+                            <a href="javascript:void(0);" class="alt-font post-title text-medium text-extra-dark-gray width-90 display-block md-width-100 margin-5px-bottom">{{ post.title}}</a>
+                            <div class="author">
+                                <span class="text-medium-gray text-uppercase text-extra-small display-inline-block">by <a href="javascript:void(0);">{{post.author}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;{{ post.publish }}</span>
+                            </div>
+                            <div class="separator-line-horrizontal-full bg-medium-gray margin-seven-tb md-margin-four-tb"></div>
+                            <p>{{post.body}}</p>
+                        </div>
+                    </div>
+                </div>
+           {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end blog section -->
+<section class="wow fadeIn parallax" id="services">
+
+</section>
+{% endblock%}

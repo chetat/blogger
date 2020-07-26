@@ -19,10 +19,10 @@ from django.contrib.postgres.search import SearchVector,\
 
 def index(request):
     posts = Post.published.all()
-    recents = posts.order_by('-publish')[:3]
+    recents = posts.order_by('-publish')[:5]
     return render(request, 'index.html', {'posts': recents}) 
 
-def post_list(request, tag_slug=None):
+def post_list_by_tag(request, tag_slug=None):
     object_list = Post.published.all()
     tag = None
     if tag_slug:
@@ -102,7 +102,7 @@ def post_detail(request, year, month, day, post):
         .exclude(id=post.id)
     similar_posts = similar_posts.annotate(same_tags=Count('tags'))\
         .order_by('-same_tags', '-publish')[:4]
-
+    print(post)
     return render(request, 'blog/post/detail.html',
                   {
                       'post': post,

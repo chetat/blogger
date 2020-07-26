@@ -11,28 +11,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
     <meta name="author" content="ThemeZaa">
     <!-- description -->
-    <meta name="description"
-        content="POFO is a highly creative, modern, visually stunning and Bootstrap responsive multipurpose agency and portfolio HTML5 template with 25 ready home page demos.">
+    <meta name="description" content="">
     <!-- keywords -->
-    <meta name="keywords"
-        content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, coming soon, faq">
     <!-- favicon -->
-    <link rel="shortcut icon" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <!-- animation -->
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- et line icon -->
     <link rel="stylesheet" href="{% static 'css/et-line-icons.css' %}">
 
     <!-- font-awesome icon -->
-    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- themify icon -->
     <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
@@ -75,75 +70,48 @@
     <!-- start header -->
     <header>
         <!-- start navigation -->
-        <nav class="navbar navbar-default bootsnav bg-transparent navbar-scroll-top nav-box-width header-light">
-            <div class="container-fluid nav-header-container">
-                <div class="row">
-                    <!-- start logo -->
-                    <div class="col-md-2 col-xs-5">
-                        <a href="index.html" title="Pofo" class="logo"><img src="images/logo.png"
-                                data-rjs="images/logo@2x.png" class="logo-dark default" alt="Pofo"><img
-                                src="images/logo-white.png" data-rjs="images/logo-white@2x.png" alt="Pofo"
-                                class="logo-light"></a>
-                    </div>
-                    <!-- end logo -->
-                    <div class="col-md-7 col-xs-2 width-auto pull-right accordion-menu xs-no-padding-right">
-                        <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse"
-                            data-target="#navbar-collapse-toggle-1">
-                            <span class="sr-only">toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <div class="navbar-collapse collapse pull-right" id="navbar-collapse-toggle-1">
-                            <ul id="accordion" class="nav navbar-nav navbar-left no-margin alt-font text-normal">
-                                <!-- start menu item -->
-                                <li class="dropdown megamenu-fw">
-                                    <a href="{% url 'index' %}">Home</a>
-                                    <!-- start sub menu -->
-                                </li>
-                               
-                                        <li class="dropdown"><a 
-                                                href="#Services">Services </a>
-                                        </li>
-                                        <li class="dropdown"><a
-                                                href="#porfolio">Portfolio</a>
-                                        </li>
-                                        <li class="dropdown"><a
-                                            href="#Contact">Contact</a>
-                                        </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-xs-5 width-auto">
-                
-                        <div class="header-social-icon xs-display-none">
-                            <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i
-                                    class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/" title="Twitter" target="_blank"><i
-                                    class="fab fa-twitter"></i></a>
-                            
-                        </div>
-                    </div>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-box-width header-light py-2">
+            
+            <a href="#" title="yekuwilfred" class="logo nav-brand"><img src="{% static 'img/yeku-logo.png' %}"/></a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#Services" class="nav-link">Services </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://yekuwilfred.com">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact">Contact</a>
+                    </li>
+                </ul>
             </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         </nav>
         <!-- end navigation -->
     </header>
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
-
+    {% block content %}
+    {% endblock %}
     <!-- end footer -->
     <!-- start scroll to top -->
     <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
     <!-- end scroll to top  -->
     <!-- javascript libraries -->
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
-
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
 
@@ -153,8 +121,6 @@
 
     <script type="text/javascript" src="{% static 'js/jquery.appear.js' %}"></script>
 
-    <!-- menu navigation -->
-    <script type="text/javascript" src="{% static 'js/bootsnav.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'js/jquery.nav.js' %}"></script>
 
